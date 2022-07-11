@@ -6,14 +6,18 @@ export const useCardStore = defineStore("CardStore", {
       items: [],
     };
   },
+  // getters
+  getters: {
+    count: (state) => state.items.length,
+    isEmpty: (state) => state.count === 0,
+  },
   // actions
   actions: {
     addItem(count, item) {
       count = parseInt(count);
       for (let i = 0; i < count; i++) {
-        this.items.push({ ...item });
+        this.items.push({ ...item }); // clone items state every time this will fix bug
       }
     },
   },
-  // getters
 });
