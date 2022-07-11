@@ -7,15 +7,6 @@ import { useCardStore } from "./stores/CardStore";
 const productStore = useProductStore();
 const cardStore = useCardStore();
 productStore.fill();
-
-const addToCard = (count, product) => {
-  count = parseInt(count);
-  cardStore.$patch((state) => {
-    for (let i = 0; i < count; i++) {
-      state.items.push(product);
-    }
-  });
-};
 </script>
 
 <template>
@@ -26,7 +17,7 @@ const addToCard = (count, product) => {
         v-for="product in productStore.products"
         :key="product.name"
         :product="product"
-        @addToCart="addToCard($event, product)"
+        @addToCart="cardStore.addItem($event, product)"
       />
     </ul>
   </div>
