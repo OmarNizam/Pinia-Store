@@ -12,7 +12,7 @@ export const useCardStore = defineStore("CardStore", {
     count: (state) => state.items.length,
     isEmpty: (state) => state.count === 0,
     grouped: (state) => groupBy(state.items, (item) => item.name),
-    groupCount: (state) => (name) => state.grouped[name].length,
+    groupCount: (state) => (name) => state.grouped[name].length, // Dynamic getters
   },
   // actions
   actions: {
