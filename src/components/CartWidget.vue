@@ -34,7 +34,9 @@ const active = ref(false);
           <AppButton class="secondary mr-2" @click="cardStore.$reset()"
             >Clear Cart</AppButton
           >
-          <AppButton class="primary">Checkout</AppButton>
+          <AppButton class="primary" @click="cardStore.checkOut">
+            Checkout
+          </AppButton>
         </div>
       </div>
       <!-- Uncomment and use condition to show when cart is empty -->
