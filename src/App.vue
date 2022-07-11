@@ -10,9 +10,11 @@ productStore.fill();
 
 const addToCard = (count, product) => {
   count = parseInt(count);
-  for (let i = 0; i < count; i++) {
-    cardStore.items.push(product);
-  }
+  cardStore.$patch((state) => {
+    for (let i = 0; i < count; i++) {
+      state.items.push(product);
+    }
+  });
 };
 </script>
 
