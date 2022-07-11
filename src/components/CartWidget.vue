@@ -24,11 +24,11 @@ const active = ref(false);
             :product="items[0]"
             :count="cardStore.groupCount(name)"
             @updateCount=""
-            @clear=""
+            @clear="cardStore.clearItem(name)"
           />
         </ul>
         <div class="flex justify-end text-2xl mb-5">
-          Total: <strong>$40</strong>
+          Total: <strong>${{ cardStore.total }}</strong>
         </div>
         <div class="flex justify-end">
           <AppButton class="secondary mr-2" @click="cardStore.$reset()"
