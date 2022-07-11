@@ -23,7 +23,7 @@ const active = ref(false);
             :key="name"
             :product="items[0]"
             :count="cardStore.groupCount(name)"
-            @updateCount=""
+            @updateCount="cardStore.setItemCount(items[0], $event)"
             @clear="cardStore.clearItem(name)"
           />
         </ul>
