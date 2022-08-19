@@ -4,7 +4,7 @@ const path = require("path");
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/Pinia-Store/",
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
